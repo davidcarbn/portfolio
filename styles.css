@@ -1,0 +1,133 @@
+/*
+Default settings
+*/
+html,body {
+    margin:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+ul {
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+body {
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --font-color: #231E1B;
+    --border-radius: 12.5px;
+}
+
+.container {
+    margin: 0 var(--space-sm);
+}
+*.margin-top-sm {
+    margin-top: var(--space-sm);
+}
+*.margin-top-md {
+    margin-top: var(--space-md);
+}
+*.margin-bottom-sm {
+    margin-bottom: var(--space-sm);
+}
+*.margin-bottom-md {
+    margin-bottom: var(--space-md);
+}
+
+/*
+Header Section
+*/
+.header {
+    border-bottom: 1px solid lightgray;
+}
+
+.header-content {
+    display:flex;
+    justify-content: space-between;
+}
+.header-content > a {
+    padding: var(--space-sm);
+    padding-left: 0;
+    color: var(--font-color);
+    font-size:1.125rem;
+}
+.header-content > ul {
+    display:flex;
+    align-items: center;
+    margin-right: calc(-0.5*var(--space-sm))
+}
+.header-content > ul > li > a {
+    padding: calc(var(--space-sm)/2);
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
+}
+.header-content > ul > li > a:hover {
+    text-decoration: underline;
+}
+/* 
+Content Section
+*/
+.content {}
+
+
+/*Box List Elements*/
+.box-list {
+    display:flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin:0 calc(-0.5*var(--space-md));
+}
+.box {
+    margin: var(--space-md) calc(var(--space-md)/2);
+    margin-bottom:0;
+    flex-basis:200px;
+    flex-grow: 1;
+    padding:var(--space-md);
+}
+.box.border {
+    border:1px solid lightgray;
+    border-radius: var(--border-radius)
+}
+.box-elem {
+    display:flex;
+}
+.box-elem.center {
+    justify-content: space-around;
+}
+.box-elem.right {
+    justify-content:flex-end;
+}
+.box-elem > a > img {
+    width:75px;
+}
+
+/* Footer Section */
+
+.footer {
+    background-color: #231E1B;
+    color:darkslategray;
+}
+.footer-content {
+    display:flex;
+    justify-content: space-around;
+    padding:var(--space-md) 0;
+}
+
+a.dark {
+    color:var(--font-color);
+    font-weight:bold;
+    text-decoration: none;
+}
+
+
+@media only screen and (min-width: 720px) {
+    .container {
+        width:75%;
+        margin:0 auto;
+    }
+    .box {
+        flex-basis: 200px;
+      flex-grow: 0; 
+    }
+}
